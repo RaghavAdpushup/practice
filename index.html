@@ -7,47 +7,35 @@
     <title>Document</title>
     <script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js" crossorigin="anonymous"></script>
     <script>
+        // Extract page param from URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const pageValue = urlParams.get('key') || '1';
+
+        console.log(pageValue);
+
         window.googletag = window.googletag || { cmd: [] };
+
         googletag.cmd.push(function () {
-            googletag
-                .defineSlot(
-                    "/100885613/RaghavTestAdUnit",
-                    [300, 250],
-                    "div-gpt-ad-1750662163246-0"
-                )
-                .addService(googletag.pubads());
-            googletag.pubads().enableSingleRequest();
+            // Define your ad slot
+            googletag.defineSlot('/100885613/RaghavtestAdUnit4', [300, 250], 'div-gpt-ad-1750681573487-0').addService(googletag.pubads());
+
+            // Set key-value targeting
+            googletag.pubads().setTargeting('key', pageValue);
+
             googletag.enableServices();
+            googletag.display('div-gpt-ad-1750681573487-0');
         });
     </script>
 
-    <script>
-        window.googletag = window.googletag || { cmd: [] };
-        googletag.cmd.push(function () {
-            googletag.defineSlot('/100885613/RaghavTestAdUnit2', [300, 250], 'div-gpt-ad-1750679416546-0').addService(googletag.pubads());
-            googletag.pubads().enableSingleRequest();
-            googletag.enableServices();
-        });
-    </script>
 </head>
 
 <body>
     <!-- Ad GAM -->
     <!-- /100885613/RaghavTestAdUnit -->
-    <div id="div-gpt-ad-1750662163246-0" style="min-width: 300px; min-height: 250px">
+    <!-- /100885613/RaghavtestAdUnit4 -->
+    <div id='div-gpt-ad-1750681573487-0' style='min-width: 300px; min-height: 250px;'>
         <script>
-            googletag.cmd.push(function () {
-                googletag.display("div-gpt-ad-1750662163246-0");
-            });
-        </script>
-    </div>
-
-    <p>Hello</p>
-
-    <!-- /100885613/RaghavTestAdUnit2 -->
-    <div id='div-gpt-ad-1750679416546-0' style='min-width: 300px; min-height: 250px;'>
-        <script>
-            googletag.cmd.push(function () { googletag.display('div-gpt-ad-1750679416546-0'); });
+            googletag.cmd.push(function () { googletag.display('div-gpt-ad-1750681573487-0'); });
         </script>
     </div>
 </body>
